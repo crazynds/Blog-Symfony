@@ -86,8 +86,12 @@ class AdminController extends AbstractController
         $form = $this->createForm(EntryFormType::class, $blogPost);
         $form->handleRequest($request);
 
+        if($form->isSubmitted())
+            $blogPost2 = $this->blogPostRepository->findOneBySlug($request->get('entry_form')['slug']);
+        else
+            $blogPost2 = false;
         // Check is valid
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && !$blogPost2) {
             $this->entityManager->persist($blogPost);
             $this->entityManager->flush($blogPost);
 
@@ -96,8 +100,10 @@ class AdminController extends AbstractController
             return $this->redirectToRoute('admin_entries');
         }
 
+
         return $this->render('admin/entry_form.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'slug_exist' => ($blogPost2)?true:false
         ]);
     }
     /**

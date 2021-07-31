@@ -15,20 +15,30 @@
                     {% endfor %}
                 {% endfor %}
                 {{ form_start(form) }}
+                    {% if slug_exist %}
+                        <div class="alert alert-danger">
+                            Já existe uma postagem com esse apelido, escolha outro apelido!
+                        </div>
+                    {% endif %}
                     <div class="col-md-12">
                         <div class="form-group col-md-4">
-                            {{ form_row(form.title) }}
+                            {{ form_label(form.title, 'Titulo da postagem') }}
+                            {{ form_widget(form.title) }}
                         </div>
                         <div class="form-group col-md-4">
-                            {{ form_row(form.slug) }}
+                            {{ form_label(form.slug, 'Apelido') }}
+                            {{ form_widget(form.slug) }}
                         </div>
                         <div class="form-group col-md-12">
-                            {{ form_row(form.description) }}
+                            {{ form_label(form.description, 'Breve descrição') }}
+                            {{ form_widget(form.description) }}
                         </div>
                         <div class="form-group col-md-12">
-                            {{ form_row(form.body) }}
+                            {{ form_label(form.body, 'Conteudo') }}
+                            {{ form_widget(form.body) }}
                         </div>
                         <div class="form-group col-md-4 pull-right">
+                            {{ form_label(form.create, 'Criar postagem!') }}
                             {{ form_widget(form.create) }}
                         </div>
                     </div>

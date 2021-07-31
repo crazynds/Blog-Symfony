@@ -1,0 +1,6 @@
+A corrigir:
+    -tela de admin quando está logado
+    -tela de admin quando não está logado
+
+Testar:
+    -Se todas as tags amps foras substituidas corretamente e estão funcionando de acordo

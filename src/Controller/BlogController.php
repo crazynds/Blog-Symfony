@@ -40,12 +40,13 @@ class BlogController extends AbstractController{
      */
     public function entriesAction(Request $request){
         $page = $request->get('page',1);
+        $count = $this->blogPostRepository->getPostCount();
 
         return $this->render('blog/entries.html.twig', [
             'blogPosts' => $this->blogPostRepository->getAllPosts($page, self::POST_LIMIT),
-            'totalBlogPosts' => $this->blogPostRepository->getPostCount(),
+            'totalBlogPosts' => $count,
             'page' => $page,
-            'entryLimit' => self::POST_LIMIT
+            'entryLimit' => self::POST_LIMIT,
         ]);
     }
 

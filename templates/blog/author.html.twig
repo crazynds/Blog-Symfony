@@ -3,33 +3,29 @@
 {% block body %}
 <div class="container">
     <div class="blog-header">
-        <h1 class="blog-title">Author</h1>
-        <p class="lead blog-description">A brief look into the author.</p>
+        <h1 class="blog-title">Autor</h1>
+        <p class="lead blog-description">Um pouco sobre o autor.</p>
     </div>
     <div class="row">
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
                 <h2 class="blog-post-title">{{ author.name|raw }}</h2>
-                <p>Title: {{ author.title|raw }}</p>
-                <p>Company: {{ author.company|raw }}</p>
-                <p>Short Biography: {{ author.shortBio|raw }}</p>
+                <p>Titulo: {{ author.title|raw }}</p>
+                <p>Empresa: {{ author.company|raw }}</p>
+                <p>Pequena biografia: {{ author.shortBio|raw }}</p>
                 <ul>
-                    <AmpContent>
-                        <li>{{ author.phone }}</li>
-                    
-</NonAmpContent>
-                    <AmpContent>
-                        <li>{{ author.facebook }}</li>
-                    
-</NonAmpContent>
-                    <AmpContent>
-                        <li>{{ author.twitter }}</li>
-                    
-</NonAmpContent>
-                    <AmpContent>
-                        <li>{{ author.github }}</li>
-                    
-</NonAmpContent>
+                    {% if app.user %}
+                        <li>Tel: {{ author.phone }}</li>
+{% endif %}
+                    {% if app.user %}
+                        <li>Facebook: {{ author.facebook }}</li>
+{% endif %}
+                    {% if app.user %}
+                        <li>Twitter: {{ author.twitter }}</li>
+{% endif %}
+                    {% if app.user %}
+                        <li>Github: {{ author.github }}</li>
+{% endif %}
                 </ul>
             </div>
         </div>
