@@ -2,7 +2,6 @@
     "name": "symfony/skeleton",
     "type": "project",
     "license": "MIT",
-    "description": "A minimal Symfony project recommended to create bare bones applications",
     "require": {
         "php": ">=7.1.3",
         "ext-ctype": "*",
@@ -11,21 +10,31 @@
         "doctrine/doctrine-bundle": "^2.4",
         "doctrine/doctrine-migrations-bundle": "^2.2",
         "doctrine/orm": "^2.9",
+        "guzzlehttp/promises": "^1.4",
+        "hwi/oauth-bundle": "^1.4",
+        "nyholm/psr7": "^1.4",
+        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/httplug-bundle": "^1.22",
         "sensio/framework-extra-bundle": "^6.1",
+        "symfony/asset": "4.4.*",
         "symfony/console": "*",
         "symfony/dotenv": "*",
         "symfony/flex": "^1.3.1",
         "symfony/framework-bundle": "*",
+        "symfony/http-client": "4.4.*",
         "symfony/proxy-manager-bridge": "4.4.*",
         "symfony/security-bundle": "4.4.*",
         "symfony/twig-bundle": "4.4.*",
         "symfony/validator": "4.4.*",
+        "symfony/webpack-encore-bundle": "^1.12",
         "symfony/yaml": "*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
     },
     "require-dev": {
-        "symfony/maker-bundle": "^1.33"
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "symfony/maker-bundle": "^1.33",
+        "symfony/web-server-bundle": "4.4.*"
     },
     "config": {
         "preferred-install": {
