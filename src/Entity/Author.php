@@ -43,7 +43,7 @@ class Author
     /**
      * @ORM\Column(type="string", length=500)
      */
-    private $shartBio;
+    private $shortBio;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -122,14 +122,14 @@ class Author
         return $this;
     }
 
-    public function getShartBio(): ?string
+    public function getShortBio(): ?string
     {
-        return $this->shartBio;
+        return $this->shortBio;
     }
 
-    public function setShartBio(?string $shartBio): self
+    public function setShortBio(?string $shortBio): self
     {
-        $this->shartBio = $shartBio;
+        $this->shortBio = $shortBio;
 
         return $this;
     }
